@@ -1,0 +1,23 @@
+.chatListHeader {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-bottom: 1px solid rgb(190, 190, 190);
+}
+
+.user-cont {
+    margin-bottom: 15px;
+}
+
+.search-cont {
+    position: relative;
+}
+
+.search-cont img {
+    width: 15px;
+    height: 15px;
+
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}

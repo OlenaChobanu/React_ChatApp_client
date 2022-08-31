@@ -1,0 +1,152 @@
+.main__chatcontent {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 66.666%;
+}
+
+.content__header {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-bottom: 1px solid rgb(190, 190, 190);
+}
+
+.current-chatting-user {
+  display: flex;
+  align-items: center;
+}
+
+.current-chatting-user p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.settings .btn-nobg {
+  color: #000;
+}
+
+.content__body {
+  padding: 20px;
+  max-height: calc(100vh - calc(100vh / 3));
+  overflow: auto;
+}
+
+.chat__item {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  transform: scale(0);
+  transform-origin: right;
+  animation-name: showIn;
+  animation-duration: 0.2s; 
+  animation-iteration-count: 1;
+  animation-direction: normal; 
+  animation-timing-function: cubic-bezier(
+    0.88,
+    0.19,
+    0.37,
+    1.11
+  ); 
+  animation-fill-mode: both;
+  animation-delay: 0.2s;
+}
+
+@keyframes showIn {
+  0% {
+    transform: scale(1); /* change if animation is needed 0-0.9*/
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.chat__item .avatar {
+  margin-right: 0px;
+  margin-left: 20px;
+  background: #fff;
+  padding: 1px;
+}
+
+.chat__item__content {
+  text-align: right;
+}
+
+.chat__item__content .chat__meta {
+  margin-top: 5px;
+  padding: 0 15px;
+}
+
+.chat__item__content .chat__meta span {
+  font-size: 12px;
+  user-select: none;
+  opacity: .5;
+}
+
+.chat__msg {
+  user-select: none;
+  padding: 20px;
+  max-height: calc(100vh - calc(100vh / 2.7));
+  overflow: auto;
+}
+
+.chat__item.other {
+  flex-direction: row-reverse;
+  transform-origin: left;
+}
+
+.chat__item.other .chat__item__content {
+  color: #fff;
+  border-radius: 25px;
+  max-width: 80%;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.chat__item .chat__msg {
+  background-color: rgb(212, 209, 209);
+  padding: 15px;
+  border-radius: 25px;
+}
+
+.chat__item.other .chat__msg {
+  background-color: #44444e;
+  color: #fff;
+  padding: 15px;
+  border-radius: 25px;
+}
+
+.chat__item.other .avatar {
+  margin-left: 0px;
+}
+
+.chat__item.other .chat__item__content .chat__meta span {
+  color: #000;
+  opacity: .5;
+}
+
+.content__footer {
+  margin-top: auto;
+  padding: 20px;
+  border-top: 1px solid rgb(190, 190, 190);
+}
+
+.sendNewMessage {
+  position: relative;
+}
+
+.main__chatcontent.initial {
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  flex-grow: 2;
+  align-self: center;
+}
+
+.chat__meta {
+  text-align: right; 
+}
+
+.chat__meta.other {
+  text-align: left; 
+}
