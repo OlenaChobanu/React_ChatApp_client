@@ -22,6 +22,7 @@ export default class ChatBody extends React.Component {
     this.onSearchChange = this.onSearchChange.bind(this);
     this.onSendChange = this.onSendChange.bind(this);
     this.onSendClick = this.onSendClick.bind(this);
+    this.onBackToListClick = this.onBackToListClick.bind(this);
     this.validateInputMsg = this.validateInputMsg.bind(this);
     this.getResponse = this.getResponse.bind(this);
     this.notifyUser = this.notifyUser.bind(this);
@@ -59,6 +60,7 @@ export default class ChatBody extends React.Component {
           currentUser={this.state.currentUser}
           onSendClick={this.onSendClick}
           onSendChange={this.onSendChange}
+          onBackToListClick={this.onBackToListClick}
           disabled={this.state.disabled}
           value={this.state.sendMsgValue}
         />
@@ -105,13 +107,29 @@ export default class ChatBody extends React.Component {
   }
 
   onListClick(e) {
+    document.querySelector('.aside-cont').classList.add('mobile-hidden');
+    document.querySelector('.main__chatcontent').classList.contains('mobile-hidden') && document.querySelector('.main__chatcontent').classList.remove('mobile-hidden');;
+    document.querySelector('.back-to-list-btn-cont').classList.remove('mobile-hidden');
     const currentUserId = e.target.closest(".chatlist__item").id;
+    console.log('currentUserId',currentUserId)
     this.setState({
       ...this.state,
       currentUser: this.state.allChatUsers.find((u) => u._id === currentUserId),
+      allChatUsers: this.state.allChatUsers.map((u) => u.search.searchMode === false ? u : {...u, search:  { searchMode: false, searchRes: false } } ),
+      //  {...u, search: { searchMode: false, searchRes: false } }
+      
       value: "",
       disabled: true,
     });
+  }
+
+  onBackToListClick(e) {
+    console.log('CLICK!!')
+    document.querySelector('.aside-cont').classList.toggle('mobile-hidden');
+    document.querySelector('.back-to-list-btn-cont').classList.toggle('mobile-hidden');
+    document.querySelector('.main__chatcontent').classList.toggle('mobile-hidden');
+
+    // document.querySelector('.main__chatcontent').classList.toggle('hidden');
   }
 
   onSendChange(e) {

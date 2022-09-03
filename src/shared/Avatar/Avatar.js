@@ -1,4 +1,5 @@
 import React from "react";
+import "./avatar.css";
 
 export default class Avatar extends React.Component {
   constructor(props) {

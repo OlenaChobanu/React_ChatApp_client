@@ -18,3 +18,20 @@
 .disabled {
  opacity: .3;
 }
+
+.back-to-list-btn {
+  /* position: absolute; */
+  /* top: 50%; */
+  /* right: 10px; */
+  /* transform: translateY(-50%); */
+  width: 30px;
+  height: 20px;
+  opacity: .4;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: transparent;
+  background-size: cover;
+  cursor: pointer;
+  background-image: url('../../../public/img/arrow.png');
+}

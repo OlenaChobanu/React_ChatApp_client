@@ -14,12 +14,31 @@ export default class ChatMainContent extends React.Component {
   render() {
     if (this.props.currentUser === null) {
       return (
+        <>
+        <div className="back-to-list-btn-cont mobile-hidden">
+          <Button 
+          type='button'
+          className={'back-to-list-btn'}
+          onClick={this.props.onBackToListClick}
+          btnName='🡄'
+          />
+        </div>
         <div className="main__chatcontent initial">
           Select a chat to start messaging
         </div>
+        </>
       );
     } else {
       return (
+        <>
+        <div className="back-to-list-btn-cont mobile-hidden">
+          <Button 
+          type='button'
+          className={'back-to-list-btn'}
+          onClick={this.props.onBackToListClick}
+          />
+        </div>
+        
         <div className="main__chatcontent">
           <div className="content__header">
             <div className="current-chatting-user">
@@ -58,6 +77,7 @@ export default class ChatMainContent extends React.Component {
             </div>
           </div>
         </div>
+        </>
       );
     }
   }
