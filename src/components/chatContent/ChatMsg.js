@@ -27,7 +27,7 @@ export default class ChatMsg extends React.Component {
           image={
             this.props.message.type === "other"
               ? this.props.user.image
-              : "../../../img/user.png"
+              : this.props.my_img
           }
         />
       </div>

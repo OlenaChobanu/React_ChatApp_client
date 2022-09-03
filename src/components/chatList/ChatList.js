@@ -14,6 +14,7 @@ export default class ChatList extends React.Component {
       <>
         <div className="aside-cont">
           <ChatListHeader
+            my_img={this.props.my_img}
             value={this.props.value}
             onSearchChange={this.props.onSearchChange}
           />

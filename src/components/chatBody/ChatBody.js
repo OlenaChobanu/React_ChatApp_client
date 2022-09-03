@@ -48,12 +48,14 @@ export default class ChatBody extends React.Component {
     return (
       <>
         <ChatList
+          my_img={this.props.my_img}
           value={this.state.value}
           users={this.state.allChatUsers}
           onListClick={this.onListClick}
           onSearchChange={this.onSearchChange}
         />
         <ChatMainContent
+          my_img={this.props.my_img}
           currentUser={this.state.currentUser}
           onSendClick={this.onSendClick}
           onSendChange={this.onSendChange}

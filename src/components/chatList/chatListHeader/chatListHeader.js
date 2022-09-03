@@ -13,7 +13,7 @@ export default class ChatListHeader extends React.Component {
     return (
       <div className="chatListHeader">
         <div className="user-cont">
-          <Avatar isOnline="true" image="../../../img/user.png" />
+          <Avatar isOnline="true" image={this.props.my_img} />
         </div>
         <div className="search-cont">
           <Input

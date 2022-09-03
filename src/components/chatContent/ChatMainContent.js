@@ -34,7 +34,10 @@ export default class ChatMainContent extends React.Component {
             </div>
           </div>
 
-          <ChatItem currentUser={this.props.currentUser} />
+          <ChatItem
+            my_img={this.props.my_img}
+            currentUser={this.props.currentUser}
+          />
 
           <div className="content__footer">
             <div className="sendNewMessage">
